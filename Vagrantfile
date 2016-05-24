@@ -5,7 +5,7 @@ $solum_prepare = <<SCRIPT
     mkdir -p /opt/stack/
     mkdir -p /opt/stack/solum
     git clone git://github.com/stackforge/solum.git /opt/stack/solum
-    cd /opt/stack/solum/contrib/devstack
+    cd /opt/stack/solum/contrib/add-ons
     cp lib/solum /opt/stack/devstack/lib
     cp extras.d/70-solum.sh /opt/stack/devstack/extras.d
 SCRIPT
