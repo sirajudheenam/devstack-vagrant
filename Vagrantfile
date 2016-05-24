@@ -32,7 +32,7 @@ SCRIPT
 $nova_docker_prepare = <<SCRIPT
     mkdir -p /opt/stack/
     mkdir -p /opt/stack/nova-docker
-    git clone git://github.com/stackforge/nova-docker.git /opt/stack/nova-docker
+    git clone git://github.com/openstack/nova-docker.git /opt/stack/nova-docker
     cd /opt/stack/nova-docker/contrib/devstack
     cp lib/nova_plugins/hypervisor-docker /opt/stack/devstack/lib/nova_plugins
     cp extras.d/70-docker.sh /opt/stack/devstack/extras.d
@@ -46,7 +46,7 @@ SCRIPT
 $solum_dashboard_install = <<SCRIPT
    [ $(grep -e "^solum:" /vagrant/vars.yaml | cut -f2 -d" ") == 'False' ] && exit 0
    mkdir -p /opt/stack/solum-dashboard
-   git clone git://github.com/stackforge/solum-dashboard.git /opt/stack/solum-dashboard
+   git clone git://github.com/openstack/solum-dashboard.git /opt/stack/solum-dashboard
    sudo pip install -e /opt/stack/solum-dashboard
    cd /opt/stack/horizon/openstack_dashboard/local/enabled
    ln -s /opt/stack/solum-dashboard/_50_solum.py.example _50_solum.py
